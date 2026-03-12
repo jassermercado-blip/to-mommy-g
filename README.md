@@ -21,11 +21,12 @@
         /* Floating Hearts Background Animation */
         .heart {
             position: absolute;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 20px;
             user-select: none;
             animation: float 10s linear infinite;
             z-index: 1;
+            text-shadow: 0 0 10px #fff;
         }
 
         @keyframes float {
@@ -34,23 +35,23 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             max-width: 500px;
-            width: 90%;
+            width: 85%;
             z-index: 10;
             border: 2px solid #ff758c;
             animation: fadeIn 2s ease-in-out;
         }
 
-        h1 { color: #ff758c; font-size: 2rem; margin-bottom: 20px; }
+        h1 { color: #ff758c; font-size: 2.2rem; margin-bottom: 20px; }
         
         .message {
             color: #555;
             line-height: 1.8;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-style: italic;
             margin-bottom: 30px;
         }
@@ -58,11 +59,12 @@
         .signature {
             font-weight: bold;
             color: #ff758c;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
+            from { opacity: 0; transform: scale(0.95); }
             to { opacity: 1; transform: scale(1); }
         }
     </style>
@@ -70,13 +72,14 @@
 <body>
 
     <script>
-        for (let i = 0; i < 15; i++) {
+        // Creates 20 floating hearts
+        for (let i = 0; i < 20; i++) {
             let heart = document.createElement('div');
             heart.className = 'heart';
             heart.innerHTML = '❤️';
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDelay = Math.random() * 10 + 's';
-            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.animationDelay = Math.random() * 8 + 's';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
             document.body.appendChild(heart);
         }
     </script>
